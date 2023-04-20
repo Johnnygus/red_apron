@@ -1,0 +1,93 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+  }
+  
+  .webtitle {
+    font-family: 'Dancing Script';
+    font-size: 6.5rem;
+    z-index: 1;
+    color: white;
+    text-align: center;
+  }
+  
+  *{
+    font-family: 'Noto Sans', sans-serif;
+  }
+
+  h2{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 30px;
+  }
+
+  .new-recipes-section {
+    padding-top: 82vh;
+    padding-bottom: 2rem;
+    text-align: center;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .new-recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .new-recipe {
+    flex-basis: calc(25% - 2rem);
+    margin: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    /* color:white;
+    background-color: lightslategray;
+    font-size: 22px; */
+  }
+  
+  .new-recipe img {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+  }
+  
+  .new-recipe a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .site-logo {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    max-width: 170px;
+    max-height: 170px;
+    z-index: 1;
+  }
+  
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
