@@ -2,8 +2,11 @@ import './RelatedRecipes.css';
 import { useParams, Link } from 'react-router-dom';
 
 const RelatedRecipes = ({ relatedRecipes }) => {
+  const { cuisineName } = useParams();
 
-    const { cuisineName } = useParams();
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     relatedRecipes && (
@@ -12,7 +15,10 @@ const RelatedRecipes = ({ relatedRecipes }) => {
         <div className="related-recipes-grid">
           {relatedRecipes.map((recipe) => (
             <div key={recipe.id} className="related-recipe-item">
-              <Link to={`/cuisine/${cuisineName}/recipe/${recipe.id}`}>
+              <Link
+                to={`/cuisine/${cuisineName}/recipe/${recipe.id}`}
+                onClick={scrollToTop}
+              >
                 <img
                   className="related-recipe-image"
                   src={`https://spoonacular.com/recipeImages/${recipe.id}-312x231.${recipe.imageType}`}

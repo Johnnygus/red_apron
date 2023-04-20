@@ -4,6 +4,18 @@
   padding: 0;
 }
 
+.ingredients-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.ingredients-section h3 {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
 
 .ingredients-grid {
   display: grid;

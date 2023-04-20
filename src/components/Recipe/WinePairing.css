@@ -1,8 +1,10 @@
 .wine-pairing {
     margin-top: 1rem;
     padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: 5px;
+    background-color: lightpink;
+    border-radius: 10px;
+    text-align: justify;
+
   }
   
   .wine-item {
@@ -14,7 +16,7 @@
   }
   
   .wine-image {
-    width: 200px;
+    width: 100px;
     height: auto;
     display: block;
     margin: 0 auto;

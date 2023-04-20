@@ -99,9 +99,9 @@ const RecipeDetails = () => {
     <Navbar />
       <div className="hero" style={{ backgroundImage: `url(${foodBanner})` }}>
         <img className="site-logo" src={siteLogo} alt="Site Logo" />
-        <h1 className='webtitle2'> Enjoy the day </h1>
+        <h1 className='webtitle2'> Your belly knows best </h1>
       </div>
-    <div className='content'> 
+     <div className='content'> 
       <div className="recipe-details">
         {recipeDetails ? (
         <>
@@ -112,19 +112,26 @@ const RecipeDetails = () => {
               src={recipeDetails.image}
               alt={recipeDetails.title}
             />
-             <div className="recipe-diet">
-              {diet && <span className="diet-label">{diet}</span>}
+            <div className="recipe-diet">
+              {diet && (
+                <>
+                  <span className="diet-icon">
+                    <i className="fas fa-seedling"></i>
+                  </span>
+                  <span className="diet-label">{diet}</span>
+                </>
+              )}
             </div>
+
           </div>
 
           <p className="recipe-description" dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></p>
             <div className="recipe-info">
-              <h3>Ingredients</h3>
+              <WinePairing winePairing={winePairing} /> 
+            
               <Ingredients extendedIngredients={recipeDetails.extendedIngredients} />
               
               <NutritionLabel nutritionLabel={nutritionLabel} />
-              
-              <WinePairing winePairing={winePairing} />
               
               <Instructions analyzedInstructions={recipeDetails.analyzedInstructions} />
           </div>
