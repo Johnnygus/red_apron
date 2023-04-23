@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   z-index: 2;
-  padding-right: 400px;
+  padding-right: 300px;
   padding-top: 50px;
   font-size: 1.3rem;
   font-weight: 700;
@@ -27,44 +27,5 @@
   color: #fff; 
 }
 
-.cuisines-dropdown {
-  cursor: pointer;
-}
-
-.cuisines-dropdown-list {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  background-color: white;
-  min-width: auto;
-  z-index: 1;
-  text-decoration: none;
-  color: black;
-  font-size: 1rem;
-  padding: 0;
-  margin: 0;
-}
-
-.cuisines-dropdown-list li {
-  padding: 8px 8px;
-  text-decoration: none;
-  display: block;
-  white-space: nowrap;
-  list-style: none;
-}
-
-.cuisines-dropdown-list li:hover {
-  background-color: #ddd;
-}
-
-/* .navbar {
-  text-decoration: none;
-  color: inherit;
-} */
-
-.cuisines-dropdown-list a {
-  text-decoration: none;
-  color: inherit;
-}
 
 

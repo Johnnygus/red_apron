@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import foodBanner from '../Hero/food_banner.jpg';
-import siteLogo from '../Home/siteLogo.png';
+import siteLogo from '../Hero/siteLogo.png';
 import './Cuisine.css';
 
 const SPOON_API_KEY = process.env.REACT_APP_SPOON_API_KEY;
@@ -25,7 +25,6 @@ const Cuisine = () => {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      try {
         let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${SPOON_API_KEY}&number=100`;
         if (selectedCuisine !== 'Any') {
           url += `&cuisine=${selectedCuisine}`;
@@ -41,13 +40,11 @@ const Cuisine = () => {
         console.log('API response:', data);
         setRecipes(data.results);
         setTotalResults(data.totalResults);
-      } catch (error) {
-        console.error('Error fetching recipes:', error);
       }
-    };
   
     fetchRecipes();
   }, [selectedCuisine, selectedDiet, searchKeyword]);
+  
   
   
   const handleChange = (event) => {
@@ -71,7 +68,7 @@ const Cuisine = () => {
       <Navbar />
       <div className="hero" style={{ backgroundImage: `url(${foodBanner})` }}>
         <img className="site-logo" src={siteLogo} alt="Site Logo" />
-        <h1 className="webtitle2">Life is short, make it sweet.</h1>
+        <h1 className="webtitle">Life is short, make it sweet.</h1>
       </div>
   
       <div className="content">
@@ -108,18 +105,19 @@ const Cuisine = () => {
           
           <div className="search-keyword">
             <form onSubmit={handleSearchSubmit}>
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Search by keyword"
-                value={searchKeyword}
-                onChange={handleSearchChange}
-              />
-            </form>
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Search by keyword"
+                  value={searchKeyword}
+                  onChange={handleSearchChange}
+                />
+              </form>
           </div> 
         </div>
-  
+                
         <div className="total-results">Total Recipes: {totalResults}</div>
+
         <div className="recipe-list">
           {recipes &&
             recipes.map((recipe) => (

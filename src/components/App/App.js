@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../Home';
 import Cuisine from '../Cuisine';
 import RecipeDetails from '../Recipe';
-import ErrorPage from '../ErrorPage/ErrorPage';
 import Footer from '../Footer/Footer';
+import ErrorPage from '../ErrorPage';
 import './App.css'
 
 function App() {
@@ -19,7 +19,6 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-      
     </div>
   );
 }

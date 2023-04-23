@@ -13,7 +13,7 @@
 
   .error-content {
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
   }
   
   .go-back-button {
@@ -25,6 +25,8 @@
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 22px;
+    text-decoration: none;
   }
   
   .go-back-button:hover {

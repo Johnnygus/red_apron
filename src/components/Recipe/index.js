@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import Ingredients from './Ingredients';
-import Instructions from './Instructions';
-import NutritionLabel from './NutritionLabel';
-import WinePairing from './WinePairing';
-import RelatedRecipes from './RelatedRecipes';
-import './RecipeDetails.css';
+import Ingredients from './Ingredients/Ingredients';
+import Instructions from './Instruction/Instructions';
+import NutritionLabel from './NutritionLabel/NutritionLabel';
+import WinePairing from './WinePairing/WinePairing'
+import RelatedRecipes from './RelatedRecipes/RelatedRecipes';
+import RecipeDescription from './RecipeDetails/RecipeDetails';
+import './RecipeDetails/RecipeDetails.css';
 import Navbar from '../Navbar/Navbar';
 import foodBanner from '../Hero/food_banner5.jpg';
-import siteLogo from '../Home/siteLogo.png';
+import siteLogo from '../Hero/siteLogo.png';
 
 const SPOON_API_KEY = process.env.REACT_APP_SPOON_API_KEY;
 
@@ -25,16 +26,12 @@ const RecipeDetails = () => {
   //Recipe Details
   useEffect(() => {
     const fetchRecipeDetails = async () => {
-      try {
         const response = await fetch(
           `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${SPOON_API_KEY}&includeNutrition=true`
         );
         const data = await response.json();
         setRecipeDetails(data);
-      } catch (error) {
-        console.error('Error fetching recipe details:', error);
-      }
-    };
+      };
   
     fetchRecipeDetails();
   }, [recipeId]);
@@ -42,17 +39,13 @@ const RecipeDetails = () => {
   //Wine Pairing
   useEffect(() => {
     const fetchWinePairing = async () => {
-      try {
         const response = await fetch(
           `https://api.spoonacular.com/food/wine/pairing?apiKey=${SPOON_API_KEY}&food=${cuisineName}`
         );
         const data = await response.json();
         console.log(data);
         setWinePairing(data);
-      } catch (error) {
-        console.error('Error fetching wine pairing:', error);
-      }
-    };
+      };
 
     if (recipeDetails) {
       fetchWinePairing();
@@ -63,15 +56,11 @@ const RecipeDetails = () => {
   //Related Recipes
   useEffect(() => {
     const fetchRelatedRecipes = async () => {
-      try {
         const response = await fetch(
           `https://api.spoonacular.com/recipes/${recipeId}/similar?apiKey=${SPOON_API_KEY}&number=6`
         );
         const data = await response.json();
         setRelatedRecipes(data);
-      } catch (error) {
-        console.error('Error fetching related recipes:', error);
-      }
     };
   
     fetchRelatedRecipes();
@@ -80,15 +69,11 @@ const RecipeDetails = () => {
   //Nutrition Label
   useEffect(() => {
     const fetchNutritionLabel = async () => {
-      try {
         const response = await fetch(
           `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.png?apiKey=${SPOON_API_KEY}`
         );
         const imageURL = response.url;
         setNutritionLabel(imageURL);
-      } catch (error) {
-        console.error('Error fetching nutrition label:', error);
-      }
     };
 
     fetchNutritionLabel();
@@ -99,34 +84,35 @@ const RecipeDetails = () => {
     <Navbar />
       <div className="hero" style={{ backgroundImage: `url(${foodBanner})` }}>
         <img className="site-logo" src={siteLogo} alt="Site Logo" />
-        <h1 className='webtitle2'> Your belly knows best </h1>
+        <h1 className='webtitle'> Your belly knows best </h1>
       </div>
-     <div className='content'> 
-      <div className="recipe-details">
-        {recipeDetails ? (
-        <>
-          <h2 className="recipe-title">{recipeDetails.title}</h2>
-          <div className="recipe-image-container">
-            <img
-              className="recipe-image"
-              src={recipeDetails.image}
-              alt={recipeDetails.title}
-            />
-            <div className="recipe-diet">
-              {diet && (
-                <>
-                  <span className="diet-icon">
-                    <i className="fas fa-seedling"></i>
-                  </span>
-                  <span className="diet-label">{diet}</span>
-                </>
-              )}
+      <div className='content'> 
+        <div className="recipe-details">
+          {recipeDetails ? (
+          <>
+            <h2 className="recipe-title">{recipeDetails.title}</h2>
+            <div className="recipe-image-container">
+              <img
+                className="recipe-image"
+                src={recipeDetails.image}
+                alt={recipeDetails.title}
+              />
+              <div className="recipe-diet">
+                {diet && (
+                  <>
+                    <span className="diet-icon">
+                      <i className="fas fa-seedling"></i>
+                    </span>
+                    <span className="diet-label">{diet}</span>
+                  </>
+                )}
             </div>
-
           </div>
 
-          <p className="recipe-description" dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></p>
+         
             <div className="recipe-info">
+              <RecipeDescription description={recipeDetails.summary} />
+              
               <WinePairing winePairing={winePairing} /> 
             
               <Ingredients extendedIngredients={recipeDetails.extendedIngredients} />
@@ -148,8 +134,8 @@ const RecipeDetails = () => {
       ) : (
         <p>Loading recipe details...</p>
       )}
-    </div>
-    </div>
+        </div>
+      </div>
     </div> 
   );
 };
