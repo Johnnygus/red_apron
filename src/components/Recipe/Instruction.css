@@ -1,5 +1,10 @@
-.instructions {
+.instruction-container {
     margin-top: 1rem;
+    background-color: lightcyan;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: justify;
+    line-height: 1.5rem;
   }
   
   .instruction-step {

@@ -3,8 +3,8 @@ import './Instruction.css';
 
 const Instructions = ({ analyzedInstructions }) => {
   return (
-    <>
-      <h3>Instructions</h3>
+    <div className='instruction-container'>
+      <h3>Instructions:</h3>
       {analyzedInstructions &&
         analyzedInstructions.map((instructionGroup, index) => (
           <div key={index}>
@@ -18,7 +18,7 @@ const Instructions = ({ analyzedInstructions }) => {
             </ol>
           </div>
       ))}
-    </>
+    </div>
   );
 };
 

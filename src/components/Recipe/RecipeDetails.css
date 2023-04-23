@@ -87,3 +87,10 @@
   text-align: left;
 }
 
+.navigation-buttons {
+  margin: 30px;
+}
+
+.home-button{
+  margin-left: 50px;
+}

@@ -3,6 +3,7 @@ import Home from '../Home';
 import Cuisine from '../Cuisine';
 import RecipeDetails from '../Recipe';
 import ErrorPage from '../ErrorPage/ErrorPage';
+import Footer from '../Footer/Footer';
 import './App.css'
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
           <Route path="/cuisine/:cuisineName/recipe/:recipeId" element={<RecipeDetails />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
+      
     </div>
   );
 }

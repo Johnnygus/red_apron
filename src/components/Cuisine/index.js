@@ -75,7 +75,7 @@ const Cuisine = () => {
       </div>
   
       <div className="content">
-        <h1>Select Cuisine & Diet</h1>
+        <h1>Make your own selection:</h1>
         <div className="selections-container">
           <div className="cuisine-selection">
             <select
