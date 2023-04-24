@@ -5,11 +5,11 @@ import Instructions from './Instruction/Instructions';
 import NutritionLabel from './NutritionLabel/NutritionLabel';
 import WinePairing from './WinePairing/WinePairing'
 import RelatedRecipes from './RelatedRecipes/RelatedRecipes';
-import RecipeDescription from './RecipeDetails/RecipeDetails';
-import './RecipeDetails/RecipeDetails.css';
+import RecipeDescription from './RecipeDesc/RecipeDesc';
+import './RecipeDesc/RecipeDesc.css';
 import Navbar from '../Navbar/Navbar';
-import foodBanner from '../Hero/food_banner5.jpg';
-import siteLogo from '../Hero/siteLogo.png';
+import foodBanner from '../Media/food_banner5.jpg';
+import siteLogo from '../Media/siteLogo.png';
 
 const SPOON_API_KEY = process.env.REACT_APP_SPOON_API_KEY;
 
@@ -120,6 +120,7 @@ const RecipeDetails = () => {
               <NutritionLabel nutritionLabel={nutritionLabel} />
               
               <Instructions analyzedInstructions={recipeDetails.analyzedInstructions} />
+
           </div>
           <div className="navigation-buttons">
             <button className="back-button" onClick={() => navigate(-1)}>

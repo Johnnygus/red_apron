@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './ErrorPage.css';
-import errorImage from '../Hero/404-2.gif';
+import errorImage from '../Media/404.gif';
 
 const ErrorPage = () => {
   return (

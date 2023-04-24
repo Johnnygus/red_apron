@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import foodBanner from '../Hero/hero4.mp4';
+import foodBanner from '../Media/hero4.mp4';
 import Navbar from '../Navbar/Navbar';
-import siteLogo from '../Hero/siteLogo.png';
+import siteLogo from '../Media/siteLogo.png';
 import './Home.css';
 
 const SPOON_API_KEY = process.env.REACT_APP_SPOON_API_KEY;

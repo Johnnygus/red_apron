@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
-import foodBanner from '../Hero/food_banner.jpg';
-import siteLogo from '../Hero/siteLogo.png';
+import foodBanner from '../Media/food_banner.jpg';
+import siteLogo from '../Media/siteLogo.png';
 import './Cuisine.css';
 
 const SPOON_API_KEY = process.env.REACT_APP_SPOON_API_KEY;
@@ -37,7 +37,6 @@ const Cuisine = () => {
         }
         const response = await fetch(url);
         const data = await response.json();
-        console.log('API response:', data);
         setRecipes(data.results);
         setTotalResults(data.totalResults);
       }
@@ -115,7 +114,7 @@ const Cuisine = () => {
               </form>
           </div> 
         </div>
-                
+             
         <div className="total-results">Total Recipes: {totalResults}</div>
 
         <div className="recipe-list">

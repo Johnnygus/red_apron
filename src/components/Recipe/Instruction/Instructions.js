@@ -1,12 +1,12 @@
 import React from 'react';
 import './Instruction.css';
 
-const Instructions = ({ detailedInstructions }) => {
+const Instructions = ({ analyzedInstructions }) => {
   return (
     <div className='instruction-container'>
       <h3>Instructions:</h3>
-      {detailedInstructions &&
-        detailedInstructions.map((instructionGroup, index) => (
+      {analyzedInstructions &&
+        analyzedInstructions.map((instructionGroup, index) => (
           <div key={index}>
             {instructionGroup.name && <h4>{instructionGroup.name}</h4>}
             <ol>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import siteLogo from '../Hero/siteLogo.png';
+import siteLogo from '../Media/siteLogo.png';
 
 const Footer = () => {
   const scrollToTop = () => {
